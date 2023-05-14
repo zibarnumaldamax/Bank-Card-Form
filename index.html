@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bank Card Form</title>
+  </head>
+  <body>
+    <h1 class="center">Bank Card Form</h1>
+    <!-- Форма -->
+    <div class="wrapper">
+        <form>
+        <label for="bank">Bank Name</label>
+        <input type="text" id="bank" name="bank" required />
+        <label for="payment">Payment System</label>
+        <select id="payment" name="payment" required>
+            <option value=""></option>
+            <option value="visa">Visa</option>
+            <option value="mastercard">Mastercard</option>
+            <option value="mir">МИР</option>
+            <option value="unionPay">UnionPay</option>
+        </select>
+        <label for="card">Card Number (16 digits)</label>
+        <input
+            type="tel"
+            id="card"
+            name="card"
+            pattern="[0-9]{16}"
+            required
+        />
+        <label for="name">Cardholder Name</label>
+        <input type="text" id="name" name="name" required />
+        <label for="expiry">Expiry Date (MM/YYYY)</label>
+        <input
+            type="text"
+            id="expiry"
+            name="expiry"
+            pattern="(0[1-9]|1[0-2])\/[0-9]{4}"
+            required
+        />
+        <button type="submit">Submit</button>
+        </form>
+        <!-- Превью карты -->
+        <div class="card-preview">
+            <div class="card-bank">
+                <span>BANK</span>
+            </div>
+            <div class="card-number">
+                <span>#### #### #### ####</span>
+            </div>
+            <div class = "card-bottom-line">
+                <div class="card-name">
+                    <span>CARDHOLDER</span>
+                </div>
+                <div class="card-expiry"></div>
+                <div class="card-payment">
+                    <img class="payment-logo" src="pic/Placeholder.png" width = "50" alt="LOGO">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Таблица -->
+    <table>
+      <thead>
+        <tr>
+          <th>Bank</th>
+          <th>Payment System</th>
+          <th>Card Number</th>
+          <th>Cardholder Name</th>
+          <th>Expiry Date</th>
+        </tr>
+      </thead>
+      <tbody id="cardTable"></tbody>
+    </table>
+    <script src="js/script.js"></script>
+    </body>
+</html>
